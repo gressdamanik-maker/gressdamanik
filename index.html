@@ -1,281 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gress Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gressilliya Damanik | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #0a0a0b;
+            --accent-blue: #2563eb; /* Electric Blue yang tegas */
+            --soft-gray: #f4f4f7;
+            --deep-navy: #0f172a;
+        }
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
 
-body {
-    background: linear-gradient(135deg, #4f46e5, #9333ea);
-    color: white;
-    scroll-behavior: smooth;
-}
+        /* Navigasi Minimalis */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 6%;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
 
-/* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 60px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-}
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            color: var(--deep-navy);
+        }
 
-nav h2 {
-    font-weight: 700;
-}
+        /* --- HERO SECTION (SPLIT SCREEN) --- */
+        .hero {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            align-items: center;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+        /* Sisi Kiri: Deskripsi */
+        .hero-content {
+            flex: 1.2;
+            padding: 0 6% 0 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-nav ul li {
-    margin-left: 25px;
-}
+        .hero-content .label {
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
+        .hero-content h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -3px;
+            color: var(--deep-navy);
+            margin-bottom: 25px;
+        }
 
-nav ul li a:hover {
-    color: #facc15;
-}
+        .hero-content p {
+            font-size: 1.15rem;
+            color: #4b5563;
+            max-width: 500px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
 
-/* Hero */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+        /* Sisi Kanan: Foto Besar */
+        .hero-image {
+            flex: 0.8;
+            height: 100%;
+            position: relative;
+            background-color: var(--soft-gray);
+        }
 
-.hero img {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 5px solid white;
-    animation: float 3s ease-in-out infinite;
-}
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Foto memenuhi area kanan */
+            filter: contrast(1.05) brightness(1.02);
+            /* Tidak ada animasi bergerak agar tetap profesional */
+        }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
+        /* Tombol CV Gen Z Style */
+        .btn-cv {
+            padding: 18px 40px;
+            background-color: var(--deep-navy);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 100px; /* Pill shape */
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: fit-content;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+        }
 
-.hero h1 {
-    margin-top: 20px;
-    font-size: 40px;
-}
+        .btn-cv:hover {
+            background-color: var(--accent-blue);
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+        }
 
-.hero span {
-    color: #facc15;
-}
+        /* Section Tambahan untuk Kredibilitas */
+        .info-section {
+            padding: 100px 8%;
+            background-color: var(--deep-navy);
+            color: white;
+        }
 
-.hero p {
-    margin-top: 10px;
-    opacity: 0.8;
-}
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+        }
 
-/* Button */
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #facc15;
-    color: black;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        .info-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #93c5fd;
+        }
 
-.btn:hover {
-    background: white;
-}
+        .info-item p {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
 
-/* Section */
-section {
-    padding: 100px 20px;
-    text-align: center;
-}
+        /* Footer */
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            border-top: 1px solid #f1f5f9;
+        }
 
-/* Glass Card */
-.glass {
-    background: rgba(255,255,255,0.1);
-    border-radius: 20px;
-    padding: 30px;
-    margin: 20px auto;
-    width: 80%;
-    backdrop-filter: blur(10px);
-}
-
-/* Skills */
-.skills {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.skill {
-    background: rgba(255,255,255,0.2);
-    padding: 15px 25px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-.skill:hover {
-    transform: scale(1.1);
-    background: #facc15;
-    color: black;
-}
-
-/* Projects */
-.projects {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.project {
-    width: 250px;
-    background: rgba(255,255,255,0.2);
-    padding: 20px;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-10px);
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background: rgba(0,0,0,0.3);
-}
-
-/* Fade Animation */
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
+        /* Responsif untuk layar HP */
+        @media (max-width: 1024px) {
+            .hero { flex-direction: column-reverse; height: auto; }
+            .hero-content { padding: 80px 6%; text-align: center; align-items: center; }
+            .hero-image { height: 500px; width: 100%; }
+            .hero-content h1 { font-size: 3rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav>
-    <h2>Gress</h2>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#project">Project</a></li>
-    </ul>
-</nav>
+    <nav>
+        <div class="logo">GRESSILLIYA.</div>
+    </nav>
 
-<!-- Hero -->
-<div class="hero">
-    <img src="muka.jpeg">
-    <h1>Hi, I'm <span>Gress</span></h1>
-    <p id="typing"></p>
-    <a href="#project" class="btn">See My Work</a>
-</div>
-
-<!-- About -->
-<section id="about" class="fade">
-    <div class="glass">
-        <h2>About Me</h2>
-        <p>
-            I am a Library and Information Science student with strong skills in 
-            information management, digital services, and administration.
-            I am detail-oriented, organized, and eager to learn.
-        </p>
-    </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="fade">
-    <h2>My Skills</h2>
-    <div class="skills">
-        <div class="skill">Information Management</div>
-        <div class="skill">Library System</div>
-        <div class="skill">Microsoft Office</div>
-        <div class="skill">Web Basic</div>
-    </div>
-</section>
-
-<!-- Projects -->
-<section id="project" class="fade">
-    <h2>My Projects</h2>
-    <div class="projects">
-        <div class="project">
-            <h3>Library Website</h3>
-            <p>Website perpustakaan modern</p>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="label">Library & Info Science Student</span>
+            <h1>Digital Curator & Librarian.</h1>
+            <p>
+                Saya Gressilliya Damanik. Berfokus pada pengorganisasian informasi di era digital agar lebih terstruktur, aman, dan mudah diakses. Siap berkontribusi dalam tim magang Anda.
+            </p>
+            <a href="CV%20GRESSILLIYA%20DAMANIK%20(1).pdf" class="btn-cv" target="_blank">Download Full CV</a>
         </div>
-        <div class="project">
-            <h3>SmartEats</h3>
-            <p>Healthy food startup for students</p>
+
+        <div class="hero-image">
+            <img src="muka.jpeg" alt="Gressilliya Damanik Profile">
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <p>© 2026 Gress Portfolio</p>
-</footer>
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-item">
+                <h3>Visi Magang</h3>
+                <p>Menerapkan sistem klasifikasi informasi yang modern untuk meningkatkan efisiensi operasional perpustakaan digital.</p>
+            </div>
+            <div class="info-item">
+                <h3>Keahlian</h3>
+                <p>Manajemen Database, Literasi Digital, Web Administration, dan Analisis Data Informasi.</p>
+            </div>
+            <div class="info-item">
+                <h3>Proyek Utama</h3>
+                <p><strong>DigiSmart Library:</strong> Membangun pusat literasi digital yang interaktif dan bebas dari disinformasi.</p>
+            </div>
+        </div>
+    </section>
 
-<script>
-// Typing Effect
-const text = "Future Librarian | Digital Information Enthusiast";
-let i = 0;
-
-function typing() {
-    if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 50);
-    }
-}
-
-typing();
-
-// Scroll Animation
-const fades = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-    fades.forEach(fade => {
-        const top = fade.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            fade.classList.add('show');
-        }
-    });
-});
-</script>
+    <footer>
+        <p>© 2026 Gressilliya Damanik | Digital Portfolio</p>
+    </footer>
 
 </body>
 </html>

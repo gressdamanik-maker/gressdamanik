@@ -1,216 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gress Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gress Portfolio | Library & Information Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-}
+    <style>
+        :root {
+            --primary: #6366f1; /* Indigo modern */
+            --secondary: #4f46e5;
+            --accent: #06b6d4;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
 
-body {
-    background: #f5f7fa;
-    color: #333;
-    scroll-behavior: smooth;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-/* Navbar */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    background: #4f46e5;
-    color: white;
-    position: sticky;
-    top: 0;
-}
+        body {
+            background: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+        /* Navbar Modern */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
 
-nav ul li {
-    margin-left: 20px;
-}
+        nav h2 {
+            font-size: 1.2rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
 
-/* Hero */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-}
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-.hero img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid #4f46e5;
-}
+        nav ul li a:hover {
+            color: var(--primary);
+        }
 
-.hero h1 {
-    margin-top: 20px;
-    font-size: 28px;
-}
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at top right, #e0e7ff, transparent),
+                        radial-gradient(circle at bottom left, #f0f9ff, transparent);
+        }
 
-.hero p {
-    color: #666;
-}
+        .hero img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: 0.5s ease;
+        }
 
-/* Section */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
+        .hero img:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
 
-h2 {
-    margin-bottom: 20px;
-}
+        .hero h1 {
+            margin-top: 25px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
 
-/* Cards */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
+        .hero p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 10px auto;
+        }
 
-.card {
-    background: white;
-    padding: 20px;
-    width: 220px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
+        /* Section Styling */
+        section {
+            padding: 80px 10%;
+            text-align: center;
+        }
 
-.card:hover {
-    transform: translateY(-8px);
-}
+        h2.section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
 
-/* Contact */
-.contact a {
-    display: inline-block;
-    margin: 10px;
-    text-decoration: none;
-    color: white;
-    background: #4f46e5;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
+        h2.section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #4f46e5;
-    color: white;
-}
+        /* Cards & Glassmorphism */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-/* Animation */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 1s;
-}
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+        }
 
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Skills specific */
+        .skill-card {
+            font-weight: 600;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        /* Contact & Buttons */
+        .contact-btns {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px;
+            background: white;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* Animation */
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            nav ul { display: none; } /* Sembunyikan menu di mobile untuk kerapihan */
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav>
-    <h2>Gress Portfolio</h2>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <nav>
+        <h2>Gress Portfolio.</h2>
+        <ul>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#project">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
 
-<!-- Hero -->
-<section class="hero fade">
-    <img src="muka.jpeg" alt="My Photo">
-    <h1>Hi, I'm Gress 👋</h1>
-    <p>Library and Information Science Student</p>
-</section>
-
-<!-- About -->
-<section id="about" class="fade">
-    <h2>About Me</h2>
-    <p>
-        I am a Library and Information Science student with strong skills in 
-        information management, digital services, and administration. 
-        I am detail-oriented, organized, and eager to learn new things.
-    </p>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="fade">
-    <h2>My Skills</h2>
-    <div class="card-container">
-        <div class="card">Information Management</div>
-        <div class="card">Library System</div>
-        <div class="card">Microsoft Office</div>
-        <div class="card">Basic Web</div>
-    </div>
-</section>
-
-<!-- Project -->
-<section id="project" class="fade">
-    <h2>My Project</h2>
-    <div class="card-container">
-        <div class="card">
-            <h3>Library Website</h3>
-            <p>Website perpustakaan berbasis HTML & CSS</p>
+    <section class="hero fade">
+        <img src="muka.jpeg" alt="Gressilliya Damanik">
+        <h1>Hi, I'm Gress 👋</h1>
+        <p>Mahasiswa Perpustakaan & Sains Informasi yang berdedikasi dalam manajemen informasi digital dan administrasi yang rapi.</p>
+        <div class="contact-btns">
+            <a href="CV%20GRESSILLIYA%20DAMANIK%20(1).pdf" class="btn btn-primary" target="_blank">Unduh CV Saya</a>
         </div>
-        <div class="card">
-            <h3>SmartEats</h3>
-            <p>Healthy food business for students</p>
+    </section>
+
+    <section id="about" class="fade">
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #475569;">
+            <p>
+                Sebagai mahasiswa Perpustakaan & Sains Informasi, saya memiliki minat besar dalam bagaimana data dan informasi dikelola agar dapat diakses dengan mudah. Saya menggabungkan prinsip perpustakaan tradisional dengan teknologi digital modern untuk menciptakan sistem informasi yang efisien.
+            </p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Contact -->
-<section id="contact" class="contact fade">
-    <h2>Contact Me</h2>
-    <a href="mailto:emailkamu@gmail.com">Email</a>
-    <a href="#">Download CV</a>
-</section>
+    <section id="skills" class="fade">
+        <h2 class="section-title">My Skills</h2>
+        <div class="card-container">
+            <div class="card skill-card">Information Management</div>
+            <div class="card skill-card">Digital Library System</div>
+            <div class="card skill-card">Administration & Ms. Office</div>
+            <div class="card skill-card">Frontend Web (HTML/CSS)</div>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer>
-    <p>© 2026 Gress Portfolio</p>
-</footer>
+    <section id="project" class="fade">
+        <h2 class="section-title">My Projects</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>DigiSmart Library</h3>
+                <p>Pengembangan website literasi dengan fitur Hoax Buster untuk memvalidasi informasi.</p>
+            </div>
+            <div class="card">
+                <h3>SmartEats</h3>
+                <p>Inovasi bisnis kuliner sehat yang dirancang khusus untuk kebutuhan mahasiswa.</p>
+            </div>
+        </div>
+    </section>
 
-<script>
-// Animasi muncul saat scroll
-const fades = document.querySelectorAll('.fade');
+    <section id="contact" class="fade">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>Tertarik untuk bekerja sama atau menawarkan kesempatan magang?</p>
+        <div class="contact-btns">
+            <a href="mailto:emailkamu@gmail.com" class="btn btn-outline">Kirim Email</a>
+        </div>
+    </section>
 
-window.addEventListener('scroll', () => {
-    fades.forEach(fade => {
-        const top = fade.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            fade.classList.add('show');
-        }
-    });
-});
-</script>
+    <footer>
+        <p>&copy; 2026 Gressilliya Damanik. Build with passion and code.</p>
+    </footer>
 
+    <script>
+        // Animasi Scroll yang lebih halus
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

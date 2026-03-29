@@ -36,7 +36,8 @@
         .project-section { padding: 80px 8%; background: var(--light-gray); }
         .section-title { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 50px; }
         
-        .project-card { background: white; border-radius: 30px; padding: 40px; margin-bottom: 40px; border: 1px solid #e2e8f0; }
+        .project-card { background: white; border-radius: 30px; padding: 40px; margin-bottom: 40px; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
         .project-card h3 { font-size: 1.8rem; color: var(--accent); margin-bottom: 5px; }
         .location { font-weight: 700; color: var(--text-gray); display: block; margin-bottom: 20px; font-size: 0.9rem; }
         
@@ -44,12 +45,12 @@
         .project-list li { margin-bottom: 8px; }
 
         /* Media Elements */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .video-wrapper { max-width: 600px; margin: 0 auto 25px auto; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
-        .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; transition: 0.3s; }
-        .gallery img:hover { transform: scale(1.03); }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+        .gallery img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; border: 1px solid #eee; }
 
         /* Skills */
         .skills-container { padding: 80px 8%; text-align: center; background: white; }
@@ -79,71 +80,94 @@
         <div class="hero-content">
             <h1>Gressilliya <br>Damanik.</h1>
             <p>
-                I am a Library and Information Science student at <strong>Universitas Sumatera Utara</strong> with strong skills in information management, library systems, and digital services. I have experience in document management, administrative tasks, and basic information technology. 
+                I am a Library and Information Science student at <strong>Universitas Sumatera Utara</strong> with strong skills in information management, library systems, and digital services. 
                 <br><br>
-                I am detail-oriented, well-organized, and possess a strong willingness to learn, adapt, and continuously develop my abilities in this ever-evolving digital era.
+                Dedicated to bridging the gap between traditional archiving and modern digital technology. I am detail-oriented, well-organized, and possess a global perspective on literacy and information flow.
             </p>
             <a href="CV%20GRESSILLIYA%20DAMANIK%20(1).pdf" class="btn-cv" target="_blank">Download Full CV</a>
         </div>
     </section>
 
     <section class="project-section" id="projects">
-        <h2 class="section-title">Project Highlights</h2>
+        <h2 class="section-title">Academic & Professional Journey</h2>
+
+        <div class="project-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                <div>
+                    <h3>International FGD: Digital Literacy Among Gen Z</h3>
+                    <span class="location">Universitas Sumatera Utara x Universiti Teknologi Malaysia | 2023</span>
+                </div>
+                <span style="background: #dbeafe; color: #1e40af; padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 15px;">INTERNATIONAL COLLABORATION</span>
+            </div>
+
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SRsHtd913K4?si=Zuiy0BGCZ8fwHY8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <ul class="project-list">
+                <li><strong>Served as a moderator</strong> in an international Focus Group Discussion with <strong>Dr. Nuraqilah Nadjwa Binti Miskam</strong> from UTM, Malaysia.</li>
+                <li>Facilitated cross-national discussions on <strong>Digital Literacy Among Gen Z</strong>.</li>
+                <li>Managed professional communication flow between international faculty and student participants.</li>
+            </ul>
+            <div class="gallery">
+                <img src="fgd1.jpeg" alt="FGD Session 1">
+                <img src="fgd2.jpeg" alt="FGD Session 2">
+                <img src="fgd3.jpeg" alt="FGD Session 3">
+            </div>
+        </div>
 
         <div class="project-card">
             <h3>SLiMS Implementation & Training</h3>
             <span class="location">SMP NEGERI 41 MEDAN | April 2025 – Dec 2025</span>
             <ul class="project-list">
-                <li>Assisted in the installation and configuration of the <strong>library automation system (SLiMS)</strong>.</li>
-                <li>Delivered workshop and intensive <strong>training</strong> on SLiMS usage to library staff and students.</li>
-                <li>Conducted material sessions and practical demonstrations on <strong>collection data management</strong>.</li>
+                <li>Assisted in the installation of the <strong>library automation system (SLiMS)</strong>.</li>
+                <li>Delivered workshop training for library staff and students on <strong>collection management</strong>.</li>
+                <li>Supported the day-to-day implementation of the system in school library activities.</li>
             </ul>
             <div class="gallery">
-                <img src="kerja1.jpeg" alt="SLiMS Implementation 1">
-                <img src="kerja2.jpeg" alt="SLiMS Implementation 2">
-                <img src="kerja3.jpeg" alt="SLiMS Implementation 3">
-                <img src="kerja4.jpeg" alt="SLiMS Implementation 4">
-                <img src="kerja5.jpeg" alt="SLiMS Implementation 5">
+                <img src="kerja1.jpeg" alt="SLiMS Implementation">
+                <img src="kerja2.jpeg" alt="SLiMS Implementation">
+                <img src="kerja3.jpeg" alt="SLiMS Implementation">
             </div>
         </div>
 
         <div class="project-card">
             <h3>Anti-Bullying Socialization Program</h3>
             <span class="location">MAN 2 MODEL MEDAN | 2023</span>
-            
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ggUO8dWXAsM?si=Y3lw8b4KInUpvq1V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ggUO8dWXAsM?si=Y3lw8b4KInUpvq1V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
             </div>
-
             <ul class="project-list">
-                <li>Conducted a socialization program on <strong>bullying prevention</strong> as part of university coursework.</li>
-                <li>Delivered educational materials to students to raise awareness about the impacts of bullying.</li>
-                <li>Engaged participants through <strong>interactive discussions</strong> and collaborative activities.</li>
+                <li>Conducted educational sessions on <strong>bullying prevention</strong> as part of university coursework.</li>
+                <li>Raised awareness through <strong>interactive discussions</strong> and material delivery to school students.</li>
             </ul>
-
             <div class="gallery">
-                <img src="proyek1.jpg" alt="Anti Bullying 1">
-                <img src="proyek2.HEIC" alt="Anti Bullying 2">
-                <img src="proyek3.HEIC" alt="Anti Bullying 3">
+                <img src="proyek1.jpg" alt="Anti Bullying">
+                <img src="proyek2.HEIC" alt="Anti Bullying">
+                <img src="proyek3.HEIC" alt="Anti Bullying">
             </div>
         </div>
     </section>
 
     <section class="skills-container" id="skills">
-        <h2 style="font-size: 2.2rem; font-weight: 800;">Core Competencies</h2>
+        <h2 style="font-size: 2.2rem; font-weight: 800;">Professional Competencies</h2>
         <div class="skill-tags">
+            <div class="tag">Moderating & Hosting</div>
+            <div class="tag">SLiMS Automation</div>
+            <div class="tag">Digital Literacy Expert</div>
             <div class="tag">Information Management</div>
-            <div class="tag">SLiMS Installation & Training</div>
             <div class="tag">Public Speaking</div>
-            <div class="tag">Document Archiving</div>
-            <div class="tag">Digital Literacy</div>
-            <div class="tag">Community Socialization</div>
+            <div class="tag">International Networking</div>
             <div class="tag">Microsoft Office</div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Gressilliya Damanik | Professional Portfolio</p>
+        <p>© 2026 Gressilliya Damanik | Powered by USU & UTM Experience</p>
     </footer>
 
 </body>

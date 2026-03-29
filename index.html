@@ -1,48 +1,216 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Gressilliya Damanik</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gress Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: #4f46e5;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #4f46e5;
+}
+
+.hero h1 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.hero p {
+    color: #666;
+}
+
+/* Section */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Contact */
+.contact a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background: #4f46e5;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4f46e5;
+    color: white;
+}
+
+/* Animation */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
 </head>
+
 <body>
-    <nav>
-        <div class="logo">GD.</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects">Proyek</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Halo, Saya <span>Gressilliya</span></h1>
-            <p>Mahasiswa Perpustakaan & Sains Informasi yang berfokus pada pengembangan sistem informasi literasi digital yang user-friendly.</p>
-            <a href="#projects" class="btn">Lihat Karya Saya</a>
+<!-- Navbar -->
+<nav>
+    <h2>Gress Portfolio</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero fade">
+    <img src="muka.jpeg" alt="My Photo">
+    <h1>Hi, I'm Gress 👋</h1>
+    <p>Library and Information Science Student</p>
+</section>
+
+<!-- About -->
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>
+        I am a Library and Information Science student with strong skills in 
+        information management, digital services, and administration. 
+        I am detail-oriented, organized, and eager to learn new things.
+    </p>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="fade">
+    <h2>My Skills</h2>
+    <div class="card-container">
+        <div class="card">Information Management</div>
+        <div class="card">Library System</div>
+        <div class="card">Microsoft Office</div>
+        <div class="card">Basic Web</div>
+    </div>
+</section>
+
+<!-- Project -->
+<section id="project" class="fade">
+    <h2>My Project</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Library Website</h3>
+            <p>Website perpustakaan berbasis HTML & CSS</p>
         </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Proyek Unggulan</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>DigiSmart Library</h3>
-                <p>Website literasi digital dengan fitur Hoax Buster dan Media Belajar interaktif.</p>
-                <span class="tech">HTML • CSS • JS</span>
-            </div>
-            <div class="project-card">
-                <h3>Sistem Arsip Digital</h3>
-                <p>Simulasi manajemen dokumen untuk efisiensi temu kembali informasi.</p>
-                <span class="tech">UI/UX • Database</span>
-            </div>
+        <div class="card">
+            <h3>SmartEats</h3>
+            <p>Healthy food business for students</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Gressilliya Damanik. Dibuat dengan semangat.</p>
-    </footer>
+<!-- Contact -->
+<section id="contact" class="contact fade">
+    <h2>Contact Me</h2>
+    <a href="mailto:emailkamu@gmail.com">Email</a>
+    <a href="#">Download CV</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Gress Portfolio</p>
+</footer>
+
+<script>
+// Animasi muncul saat scroll
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    fades.forEach(fade => {
+        const top = fade.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            fade.classList.add('show');
+        }
+    });
+});
+</script>
+
 </body>
 </html>

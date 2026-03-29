@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gressilliya Damanik | Digital Portfolio</title>
+    <title>Gressilliya Damanik | Digital Librarian</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,170 +14,59 @@
             --light-gray: #f8fafc;
         }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        /* Navigasi */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            display: flex; justify-content: space-between;
-            padding: 30px 8%;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--dark); }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg); color: var(--dark); line-height: 1.6; }
+        
+        /* Nav */
+        nav { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; padding: 25px 8%; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #f1f5f9; }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
         nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+        nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.85rem; }
 
-        /* --- HERO & ABOUT ME (SPLIT) --- */
-        .hero {
-            display: flex;
-            min-height: 100vh;
-            align-items: stretch;
-            padding-top: 80px;
-        }
-
-        .hero-image {
-            flex: 1;
-            background-color: var(--light-gray);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            /* Foto besar, statis, dan berwibawa */
-        }
-
-        .hero-content {
-            flex: 1.2;
-            padding: 80px 8%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-            text-align: justify;
-        }
-
-        .btn-cv {
-            display: inline-block;
-            padding: 15px 35px;
-            background: var(--dark);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: 0.3s;
-            width: fit-content;
-        }
-
+        /* Hero / About */
+        .hero { display: flex; min-height: 100vh; align-items: stretch; padding-top: 75px; }
+        .hero-image { flex: 1; background-color: var(--light-gray); }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { flex: 1.2; padding: 60px 8%; display: flex; flex-direction: column; justify-content: center; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 20px; letter-spacing: -2px; }
+        .hero-content p { font-size: 1.05rem; color: var(--text-gray); margin-bottom: 30px; text-align: justify; }
+        
+        .btn-cv { display: inline-block; padding: 15px 35px; background: var(--dark); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; transition: 0.3s; width: fit-content; }
         .btn-cv:hover { background: var(--accent); transform: translateY(-3px); }
 
-        /* --- VISION & MISSION --- */
-        .vision-mission {
-            background-color: var(--dark);
-            color: white;
-            padding: 100px 8%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
+        /* Project Section - SLIMS Focus */
+        .project-section { padding: 100px 8%; background: var(--light-gray); }
+        .project-detail { background: white; border-radius: 30px; padding: 50px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .project-detail h2 { font-size: 2rem; margin-bottom: 10px; color: var(--accent); }
+        .project-detail .location { font-weight: 700; color: var(--text-gray); margin-bottom: 25px; display: block; font-size: 0.9rem; }
+        
+        .project-list { margin-left: 20px; margin-bottom: 40px; }
+        .project-list li { margin-bottom: 10px; color: var(--text-gray); }
 
-        .vision-mission h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
-        .vision-mission p { color: #cbd5e1; font-size: 1.1rem; }
+        /* Gallery Grid */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; transition: 0.4s; border: 2px solid transparent; }
+        .gallery img:hover { transform: scale(1.05); border-color: var(--accent); }
 
-        /* --- EXPERIENCE SECTION (WORK & PROJECT) --- */
-        .experience {
-            padding: 100px 8%;
-        }
+        /* Vision & Skills */
+        .grid-section { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .card { padding: 40px; border-radius: 24px; background: var(--dark); color: white; }
+        .card h2 { color: var(--accent); margin-bottom: 20px; }
+        .card p { color: #cbd5e1; }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 50px;
-            text-align: center;
-        }
+        .skills-container { padding: 60px 8%; text-align: center; }
+        .skill-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 25px; }
+        .tag { padding: 10px 20px; background: white; border: 1px solid #e2e8f0; border-radius: 50px; font-weight: 700; font-size: 0.85rem; }
 
-        .exp-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
+        footer { padding: 40px; text-align: center; font-size: 0.8rem; color: var(--text-gray); border-top: 1px solid #eee; }
 
-        .exp-card {
-            background: var(--light-gray);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .exp-card h3 { margin-bottom: 10px; color: var(--accent); }
-        .exp-card .date { font-weight: 700; font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; }
-
-        /* --- SKILLS --- */
-        .skills-section {
-            padding: 80px 8%;
-            background: #f1f5f9;
-            text-align: center;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .tag {
-            background: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            color: var(--dark);
-        }
-
-        footer { padding: 50px; text-align: center; border-top: 1px solid #eee; color: var(--text-gray); font-size: 0.9rem; }
-
-        /* Mobile */
-        @media (max-width: 1024px) {
-            .hero, .vision-mission, .exp-grid { flex-direction: column; grid-template-columns: 1fr; }
-            .hero-image { height: 400px; }
-            .hero-content h1 { font-size: 2.5rem; }
-        }
+        @media (max-width: 1024px) { .hero, .grid-section { flex-direction: column; grid-template-columns: 1fr; } .hero-image { height: 400px; } .hero-content h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Gressilliya.</div>
+        <div class="logo">GRESSILLIYA.</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -194,56 +83,61 @@
             <p>
                 I am a Library and Information Science student at <strong>Universitas Sumatera Utara</strong> with strong skills in information management, library systems, and digital services. I have experience in document management, administrative tasks, and basic information technology. 
                 <br><br>
-                I am detail-oriented, well-organized, and able to work both independently and in a team. I possess good communication skills and a strong willingness to learn, adapt, and continuously develop my abilities in this ever-evolving digital era.
+                I am detail-oriented, well-organized, and able to work both independently and in a team. I possess good communication skills and a strong willingness to learn, adapt, and continuously develop my abilities.
             </p>
-            <a href="CV%20GRESSILLIYA%20DAMANIK%20(1).pdf" class="btn-cv" target="_blank">Download CV (PDF)</a>
+            <a href="CV%20GRESSILLIYA%20DAMANIK%20(1).pdf" class="btn-cv" target="_blank">Download Full CV</a>
         </div>
     </section>
 
-    <section class="vision-mission">
-        <div>
-            <h2>My Vision</h2>
-            <p>Menjadi ahli informasi profesional yang menjembatani kesenjangan literasi digital melalui pengelolaan data yang sistematis, aksesibel, dan terpercaya bagi masyarakat luas.</p>
+    <section class="grid-section">
+        <div class="card">
+            <h2>Vision</h2>
+            <p>Menjadi tenaga ahli informasi yang profesional, inovatif, dan mampu mengintegrasikan teknologi terkini dalam manajemen perpustakaan digital untuk mendukung literasi masyarakat.</p>
         </div>
-        <div>
-            <h2>My Mission</h2>
-            <p>1. Mengembangkan sistem perpustakaan yang modern dan inklusif.<br>
-               2. Meningkatkan efisiensi temu kembali informasi melalui teknologi.<br>
-               3. Memastikan setiap informasi dikelola dengan integritas dan akurasi tinggi.</p>
+        <div class="card" style="background: #f1f5f9; color: var(--dark);">
+            <h2 style="color: var(--accent);">Work Experience</h2>
+            <p><strong>Administration & Information Staff</strong><br>Berpengalaman dalam pengelolaan administrasi kantor, penataan dokumen fisik dan digital, serta mendukung efisiensi operasional harian melalui sistem informasi yang tertata.</p>
         </div>
     </section>
 
-    <section class="experience" id="experience">
-        <h2 class="section-title">Professional Journey</h2>
-        <div class="exp-grid">
-            <div class="exp-card">
-                <span class="date">Work Experience</span>
-                <h3>Administration & Information Staff</h3>
-                <p>Bertanggung jawab dalam pengelolaan dokumen administratif, penataan arsip digital, dan memastikan alur informasi berjalan dengan efisien dalam lingkungan kerja.</p>
+    <section class="project-section" id="experience">
+        <div class="project-detail">
+            <h2>SLiMS Implementation & Training</h2>
+            <span class="location">SMP NEGERI 41 MEDAN | April 2025 – Dec 2025</span>
+            
+            <ul class="project-list">
+                <li>Assisted in the installation and configuration of the <strong>library automation system (SLiMS)</strong>.</li>
+                <li>Delivered workshop and intensive <strong>training</strong> on SLiMS usage to library staff and students.</li>
+                <li>Conducted material sessions and practical demonstrations on <strong>collection data management</strong>.</li>
+                <li>Supported the day-to-day implementation of the system to ensure smooth library activities.</li>
+            </ul>
+
+            <p style="font-weight: 700; color: var(--dark); margin-bottom: 15px;">Documentation Gallery:</p>
+            <div class="gallery">
+                <img src="kerja1.jpeg" alt="Workshop SLiMS 1">
+                <img src="kerja2.jpeg" alt="Workshop SLiMS 2">
+                <img src="kerja3.jpeg" alt="Workshop SLiMS 3">
+                <img src="kerja4.jpeg" alt="Workshop SLiMS 4">
+                <img src="kerja5.jpeg" alt="Workshop SLiMS 5">
             </div>
-            <div class="exp-card">
-                <span class="date">Project Experience</span>
-                <h3>DigiSmart Library Project</h3>
-                <p>Mengembangkan platform literasi digital sebagai solusi untuk manajemen konten dan verifikasi informasi guna memerangi disinformasi (hoax) di kalangan pelajar.</p>
-            </div>
         </div>
     </section>
 
-    <section class="skills-section" id="skills">
-        <h2 class="section-title">Core Skills</h2>
+    <section class="skills-container" id="skills">
+        <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">Core Skills</h2>
         <div class="skill-tags">
+            <div class="tag">SLiMS Installation</div>
             <div class="tag">Information Management</div>
-            <div class="tag">Library Automation Systems</div>
-            <div class="tag">Digital Literacy</div>
-            <div class="tag">Administrative Tasks</div>
-            <div class="tag">Document Management</div>
-            <div class="tag">Basic Web (HTML/CSS)</div>
-            <div class="tag">Strategic Communication</div>
+            <div class="tag">Library Automation</div>
+            <div class="tag">Document Archiving</div>
+            <div class="tag">Microsoft Office Specialist</div>
+            <div class="tag">Basic Web Development</div>
+            <div class="tag">Public Speaking & Training</div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Gressilliya Damanik. Digital Librarian Portfolio.</p>
+        <p>© 2026 Gressilliya Damanik | Digital Librarian & Information Expert</p>
     </footer>
 
 </body>
